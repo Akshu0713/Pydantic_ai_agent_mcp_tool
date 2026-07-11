@@ -9,10 +9,10 @@ load_dotenv()
 
 # update the path with your machine details
 server = MCPServerStdio(
-    command="/Users/sid/.local/bin/uv",
+    command="/path/to/uv",
     args=[
         "--directory",
-        "/Volumes/MyDrive/3_udemy/3_udemy_src/2_rec_code/9_mcp/9_2_build_an_mcp_server",
+        "/path/to/your/mcp/server",
         "run",
         "weather.py",
     ],
@@ -25,7 +25,7 @@ agent = Agent(
 
 async def main():
     async with agent:
-        result = await agent.run("What is the current weather in Chennai?")
+        result = await agent.run("What is the current weather in London?")
         # result = await agent.run(
         #     "What is the current stock price of Tesla?")  # this won't be answered with the weather tool
     print(result)
